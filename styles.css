@@ -1,0 +1,189 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background: #28a745;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* General Container Styles */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+/* Section Styles */
+section {
+    background: url('https://img.freepik.com/premium-photo/healthy-food-variation-with-copy-space-empty-background_944892-519.jpg') no-repeat center center/cover;
+    color: #28a745;
+    padding: 4rem 0;
+    text-align: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff; /* Changed to white for better readability */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #fff; /* Changed to white for better readability */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #fff; /* Changed to white for better readability */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Home Section Specific Styles */
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#home .btn {
+    background: #ff6347;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#home .btn:hover {
+    background: #e5533b;
+}
+
+.advertIMG {
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer Styles */
+footer {
+    background: #28a745;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    #home {
+        padding: 0 1rem;
+    }
+}
+
+/* Ad Container Styles */
+.ad-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.advertIMG {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
