@@ -137,10 +137,18 @@ section ul li {
     text-align: center;
 }
 
-.advert-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* Light Square Ad Styles */
+.light-square .advertIMG {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    aspect-ratio: 1 / 1; /* 1:1 ratio */
+}
+
+/* Horizontal Strip Ad Styles */
+.horizontal-strip .advertIMG {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    aspect-ratio: 4 / 1; /* 4:1 ratio */
 }
 
 /* Footer Styles */
