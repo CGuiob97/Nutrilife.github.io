@@ -131,8 +131,13 @@ section ul li {
     background: #e5533b;
 }
 
-.advertIMG {
-    margin-top: 2rem;
+/* Ad Container Styles */
+.ad-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.advert-img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -174,16 +179,3 @@ footer {
         padding: 0 1rem;
     }
 }
-
-/* Ad Container Styles */
-.ad-container {
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.advertIMG {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
