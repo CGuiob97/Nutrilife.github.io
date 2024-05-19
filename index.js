@@ -1,40 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Ad placeholders
-    const adPlaceholders = [
-        document.getElementById('ad1'),
-        document.getElementById('ad2'),
-        document.getElementById('ad3'),
-        document.getElementById('ad4'),
-        document.getElementById('ad5')
-    ];
+var formdata = new FormData();
+formdata.append("type", "Light Square");
+formdata.append("tags", "food,nutrition,health,fitness");
 
-    // Function to set ad content
-    function setAdContent(adElement, adData) {
-        adElement.querySelector('.advert-img').src = adData.link;
-        adElement.querySelector('.advert-img').alt = adData.alt;
-        adElement.querySelector('.anchor-element').href = adData.href;
-    }
+var ajax = new XMLHttpRequest();
+ajax.addEventListener("load", completeHandler, false);
 
-    // FormData for the request
-    var formdata = new FormData();
-    formdata.append("type", "Light Square");
-    formdata.append("tags", "food,nutrition,health,fitness");
+ajax.open("POST", "https://ad.simaneka.com/api/get");
+ajax.setRequestHeader("authorisation", "hLks3oJ8eHxiqAg08QKWObTTpqigGwrK");
 
-    // XMLHttpRequest setup
-    var ajax = new XMLHttpRequest();
-    ajax.addEventListener("load", completeHandler, false);
-    ajax.open("POST", "https://ad.simaneka.com/api/get");
-    ajax.setRequestHeader("authorisation", "hLks3oJ8eHxiqAg08QKWObTTpqigGwrK");
-    ajax.send(formdata);
+ajax.send(formdata);
 
-    // Event handler for AJAX load
-    function completeHandler(event) {
-        var response = JSON.parse(event.target.responseText);
-        console.log(response);
+function completeHandler(event) {
+    var response = JSON.parse(event.target.responseText);
 
-        // Populate all ad placeholders with the response data
-        adPlaceholders.forEach(adElement => {
-            setAdContent(adElement, response);
-        });
-    }
-});
+    console.log(response);
+
+    // Light Square Ads
+    document.querySelectorAll('.light-square .advertIMG').forEach(function(adElement) {
+        adElement.src = response.link;
+        adElement.alt = response.alt;
+    });
+
+    document.querySelectorAll('.light-square .anchorElement').forEach(function(anchorElement) {
+        anchorElement.href = response.href;
+    });
+
+    // Horizontal Strip Ads
+    document.querySelectorAll('.horizontal-strip .advertIMG').forEach(function(adElement) {
+        adElement.src = response.link;
+        adElement.alt = response.alt;
+    });
+
+    document.querySelectorAll('.horizontal-strip .anchorElement').forEach(function(anchorElement) {
+        anchorElement.href = response.href;
+    });
+
+    // Update header text with ad message
+    document.querySelector('.headerText').innerHTML = response.message;
+}
